@@ -3,77 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NFT DEPARTMENTS</title>
+    <title>DEPARTAMENTOS NFTs</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #0a3552;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(120deg, #e0f7fa, #fff3e0);
+            margin: 0;
             padding: 20px;
         }
-        .nft-card {
-            background-color: rgb(58, 131, 190);
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(25, 23, 31, 0.2);
-            margin: 10px;
-            padding: 15px;
-            width: 250px;
+        h1 {
             text-align: center;
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+        .nft-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        .nft-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .nft-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.25);
         }
         .nft-card img {
             width: 100%;
-            border-radius: 8px;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 10px;
         }
         .nft-card h2 {
-            margin: 10px 0 5px 0;
-            font-size: 20px;
+            margin: 10px 0 5px;
+            color: #00796b;
+            font-size: 1.3rem;
         }
         .nft-card p {
             margin: 5px 0;
-            font-size: 14px;
-            color: #071013;
-            word-wrap: break-word;
+            font-size: 0.9rem;
+            color: #555;
+            word-break: break-all;
+        }
+        .copy-btn {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #00796b;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .copy-btn:hover {
+            background-color: #004d40;
         }
     </style>
 </head>
 <body>
+    <h1>Mi Colección de NFTs</h1>
+    <div class="nft-container">
 
-    <div class="nft-card">
-        <img src="imagenes/1.jpeg" alt="NFT Imagen">
-        <h2>Mi NFT #1</h2>
-        <p>ID: DEPTO 1</p>
-        <p>Propietario: 0xa6a8dBbD5B9e8443ECB61806bcDa0a1c6D6ae241</p>
+        <!-- NFT 1 -->
+        <div class="nft-card">
+            <img src="imagenes/1.jpeg" alt="NFT 1">
+            <h2>Nombre NFT 1</h2>
+            <p>ID: 1</p>
+            <p>Propietario: <span id="owner1">0x8598fd2c555aec14c3ff6f4b1c6bbc629de801a44b5e4b2b560bb801c0cba160</span></p>
+            <button class="copy-btn" onclick="copyOwner('owner1')">Copiar dirección</button>
+        </div>
+
+        <!-- NFT 2 -->
+        <div class="nft-card">
+            <img src="imagenes/2.jpeg" alt="NFT 2">
+            <h2>Nombre NFT 2</h2>
+            <p>ID: 2</p>
+            <p>Propietario: <span id="owner2">0x8598fd2c555aec14c3ff6f4b1c6bbc629de801a44b5e4b2b560bb801c0cba160</span></p>
+            <button class="copy-btn" onclick="copyOwner('owner2')">Copiar dirección</button>
+        </div>
+
+        <!-- NFT 3 -->
+        <div class="nft-card">
+            <img src="imagenes/3.jpeg" alt="NFT 3">
+            <h2>Nombre NFT 3</h2>
+            <p>ID: 3</p>
+            <p>Propietario: <span id="owner3">0x8598fd2c555aec14c3ff6f4b1c6bbc629de801a44b5e4b2b560bb801c0cba160</span></p>
+            <button class="copy-btn" onclick="copyOwner('owner3')">Copiar dirección</button>
+        </div>
+
+        <!-- NFT 4 -->
+        <div class="nft-card">
+            <img src="imagenes/4.jpeg" alt="NFT 4">
+            <h2>Nombre NFT 4</h2>
+            <p>ID: 4</p>
+            <p>Propietario: <span id="owner4">0x8598fd2c555aec14c3ff6f4b1c6bbc629de801a44b5e4b2b560bb801c0cba160</span></p>
+            <button class="copy-btn" onclick="copyOwner('owner4')">Copiar dirección</button>
+        </div>
+
+        <!-- NFT 5 -->
+        <div class="nft-card">
+            <img src="imagenes/5.jpeg" alt="NFT 5">
+            <h2>Nombre NFT 5</h2>
+            <p>ID: 5</p>
+            <p>Propietario: <span id="owner5">0x8598fd2c555aec14c3ff6f4b1c6bbc629de801a44b5e4b2b560bb801c0cba160</span></p>
+            <button class="copy-btn" onclick="copyOwner('owner5')">Copiar dirección</button>
+        </div>
+
+        <!-- NFT 6 -->
+        <div class="nft-card">
+            <img src="imagenes/6.jpeg" alt="NFT 6">
+            <h2>Nombre NFT 6</h2>
+            <p>ID: 6</p>
+            <p>Propietario: <span id="owner6">0x8598fd2c555aec14c3ff6f4b1c6bbc629de801a44b5e4b2b560bb801c0cba160</span></p>
+            <button class="copy-btn" onclick="copyOwner('owner6')">Copiar dirección</button>
+        </div>
+
+        <!-- NFT 7 -->
+        <div class="nft-card">
+            <img src="imagenes/7.jpeg" alt="NFT 7">
+            <h2>Nombre NFT 7</h2>
+            <p>ID: 7</p>
+            <p>Propietario: <span id="owner7">0x8598fd2c555aec14c3ff6f4b1c6bbc629de801a44b5e4b2b560bb801c0cba160</span></p>
+            <button class="copy-btn" onclick="copyOwner('owner7')">Copiar dirección</button>
+        </div>
+
+        <!-- NFT 8 -->
+        <div class="nft-card">
+            <img src="imagenes/8.jpeg" alt="NFT 8">
+            <h2>Nombre NFT 8</h2>
+            <p>ID: 8</p>
+            <p>Propietario: <span id="owner8">0x8598fd2c555aec14c3ff6f4b1c6bbc629de801a44b5e4b2b560bb801c0cba160</span></p>
+            <button class="copy-btn" onclick="copyOwner('owner8')">Copiar dirección</button>
+        </div>
+
+        <!-- NFT 9 -->
+        <div class="nft-card">
+            <img src="imagenes/9.jpeg" alt="NFT 9">
+            <h2>Nombre NFT 9</h2>
+            <p>ID: 9</p>
+            <p>Propietario: <span id="owner9">0x8598fd2c555aec14c3ff6f4b1c6bbc629de801a44b5e4b2b560bb801c0cba160</span></p>
+            <button class="copy-btn" onclick="copyOwner('owner9')">Copiar dirección</button>
+        </div>
+
+        <!-- NFT 10 -->
+        <div class="nft-card">
+            <img src="imagenes/10.jpeg" alt="NFT 10">
+            <h2>Nombre NFT 10</h2>
+            <p>ID: 10</p>
+            <p>Propietario: <span id="owner10">0x8598fd2c555aec14c3ff6f4b1c6bbc629de801a44b5e4b2b560bb801c0cba160</span></p>
+            <button class="copy-btn" onclick="copyOwner('owner10')">Copiar dirección</button>
+        </div>
+
     </div>
 
-    <div class="nft-card">
-        <img src="imagenes/2.jpeg" alt="NFT Imagen">
-        <h2>Mi NFT #2</h2>
-        <p>ID: DEPTO 2</p>
-        <p>Propietario: 0xa6a8dBbD5B9e8443ECB61806bcDa0a1c6D6ae241</p>
-    </div>
-
-    <div class="nft-card">
-        <img src="imagenes/3.jpeg" alt="NFT Imagen">
-        <h2>Mi NFT #3</h2>
-        <p>ID: DEPTO 3</p>
-        <p>Propietario: 0xa6a8dBbD5B9e8443ECB61806bcDa0a1c6D6ae241</p>
-    </div>
-
-    <div class="nft-card">
-        <img src="imagenes/4.jpeg" alt="NFT Imagen">
-        <h2>Mi NFT #4</h2>
-        <p>ID: DEPTO 4</p>
-        <p>Propietario: 0xa6a8dBbD5B9e8443ECB61806bcDa0a1c6D6ae241</p>
-    </div>
-
-    <div class="nft-card">
-        <img src="imagenes/5.jpeg" alt="NFT Imagen">
-        <h2>Mi NFT #5</h2>
-        <p>ID: DEPTO 5</p>
-        <p>Propietario: 0xa6a8dBbD5B9e8443ECB61806bcDa0a1c6D6ae241</p>
-    </div>
-
+    <script>
+        function copyOwner(id) {
+            const owner = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(owner)
+                .then(() => alert('Dirección copiada: ' + owner))
+                .catch(err => console.error('Error al copiar: ', err));
+        }
+    </script>
 </body>
 </html>
